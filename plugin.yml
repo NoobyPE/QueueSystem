@@ -1,0 +1,6 @@
+name: QueueSystem
+main: nooby\queuesystem\QueueSystemLoader
+api: 5.0.0
+load: "STARTUP"
+php: 8.0
+version: 1.0
