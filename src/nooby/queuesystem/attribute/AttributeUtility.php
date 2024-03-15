@@ -2,13 +2,13 @@
 
 namespace nooby\queuesystem\attribute;
 
-use pocketmine\player\Player;
-
 interface AttributeUtility
 {
-    function add(Player $player): bool;
+    function __construct(string $id, ...$options);
 
-    function delete(Player $player): bool;
+    function getID(): string;
 
-    function getAll(): array;
+    function getOptionsByIdentifier(string $identifier): mixed;
+
+    function getOptions(): array;
 }
