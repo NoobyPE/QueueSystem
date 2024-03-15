@@ -6,9 +6,12 @@ use pocketmine\player\Player;
 
 interface AttributeUtility
 {
-    function add(Player $player): bool;
 
-    function delete(Player $player): bool;
+    function __construct(string $id, ...$options);
 
-    function getAll(): array;
+    function getID(): string;
+
+    function getOptionsByIdentifier(string $identifier): mixed;
+
+    function getOptions(): array;
 }
