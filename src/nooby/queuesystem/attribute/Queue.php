@@ -18,6 +18,7 @@ final class Queue implements AttributeUtility
      *  - (array) players: almacena los jugadores ya sea uno o mas
      *  - (array) elo: el elo de cada jugador si es q existen mas
      *  - (bool) isPE: valor boleano si solo empareja con gente de celular
+     *  - (bool) ranked: si es competitivo o no
      *  - (bool) force: basicamente q empareje rapido (usuario pendejo)
      */
     function __construct(string $id, ...$options)
