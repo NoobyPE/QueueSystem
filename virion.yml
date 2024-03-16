@@ -1,0 +1,5 @@
+name: QueueSystem
+main: nooby\queuesystem
+api: 5.0.0
+php: 8.0
+version: 1.0
