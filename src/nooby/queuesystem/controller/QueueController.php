@@ -47,9 +47,9 @@ class QueueController implements Controller
         return false;
     }
 
-    function get(string $id, ?array $options = null): ?Queue
+    function get(string $id, array $options): ?Queue
     {
-        return $this->QUEUES[$id] ?? new Queue(self::generateID(), $options);
+        return $this->QUEUES[$id] ?? isset($options) ? new Queue(self::generateID(), $options) : null;
     }
 
     function getAll(): array

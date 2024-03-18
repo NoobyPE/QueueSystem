@@ -10,7 +10,7 @@ interface Controller
 
     function delete(string $id): bool;
 
-    function get(string $id, ?array $options = null): ?Queue;
+    function get(string $id, array $options): ?Queue;
 
     function getAll(): array;
 }
