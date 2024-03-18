@@ -24,7 +24,7 @@ class QueueController implements Controller
      * USE: add($id, options: $array);
      * or: add(options: $array);
      */
-    function add(string $id = "", ?Queue $queue = null, ...$options): string
+    function add(string $id = "", Queue $queue = null, ...$options): string
     {
         if (isset($queue)) {
             $this->QUEUES[$queue->getID()] = $queue;

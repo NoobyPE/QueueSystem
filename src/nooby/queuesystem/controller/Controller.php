@@ -6,7 +6,7 @@ use nooby\queuesystem\attribute\Queue;
 
 interface Controller
 {
-    function add(string $id = "", ?Queue $queue = null, ...$options): string;
+    function add(string $id = "", Queue $queue = null, ...$options): string;
 
     function delete(string $id): bool;
 
