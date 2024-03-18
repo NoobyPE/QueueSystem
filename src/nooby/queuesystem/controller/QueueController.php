@@ -20,18 +20,22 @@ class QueueController implements Controller
         return bin2hex(random_bytes(5));
     }
 
-    function add(string $id = null, ...$options): bool
+    /**
+     * USE: add($id, options: $array);
+     * or: add(options: $array);
+     */
+    function add(string $id = "", ?Queue $queue = null, ...$options): string
     {
-        $id = $id === null ? self::generateID() : $id;
+        if (isset($queue)) {
+            $this->QUEUES[$queue->getID()] = $queue;
+            return $queue->getID();
+        }
+        $id = $id === "" ? self::generateID() : $id;
         $queue = new Queue($id, $options);
         if (empty($this->QUEUES[$id])) {
             $this->QUEUES[$id] = $queue;
-            return true;
-        } else {
-            $this->QUEUES[$id] = $queue;
-            return true;
         }
-        return false;
+        return $id;
     }
 
     function delete(string $id): bool
@@ -41,6 +45,11 @@ class QueueController implements Controller
             return true;
         }
         return false;
+    }
+
+    function get(string $id, ?array $options = null): ?Queue
+    {
+        return $this->QUEUES[$id] ?? new Queue(self::generateID(), $options);
     }
 
     function getAll(): array
