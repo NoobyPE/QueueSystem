@@ -30,7 +30,7 @@ final class Queue implements AttributeUtility
         $this->options = $options;
     }
 
-    function getID(): string
+    function getId(): string
     {
         return $this->id;
     }
