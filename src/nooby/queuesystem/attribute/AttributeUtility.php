@@ -6,7 +6,7 @@ interface AttributeUtility
 {
     function __construct(string $id, ...$options);
 
-    function getID(): string;
+    function getId(): string;
 
     function getOptionsByIdentifier(string $identifier): mixed;
 
