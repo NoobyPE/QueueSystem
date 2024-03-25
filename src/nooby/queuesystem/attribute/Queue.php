@@ -11,7 +11,7 @@ final class Queue implements AttributeUtility
     private string $id;
 
     /** @var array */
-    private array $options;
+    private $options;
 
     /**
      * NOTE: $options data base
@@ -21,13 +21,13 @@ final class Queue implements AttributeUtility
      *  - (bool) ranked: si es competitivo o no
      *  - (bool) force: basicamente q empareje rapido (usuario pendejo)
      */
-    function __construct(string $id, ...$options)
+    function __construct(string $id, array $options)
     {
         $this->id = $id;
         if (empty($options)) {
             throw new InvalidArgumentException("\"$options\" is not empty");
         }
-        $this->options = $options;
+        $this->options = (object) $options;
     }
 
     function getId(): string
@@ -35,12 +35,7 @@ final class Queue implements AttributeUtility
         return $this->id;
     }
 
-    function getOptionsByIdentifier(string $identifier): mixed
-    {
-        return $this->options[$identifier]; 
-    }
-
-    function getOptions(): array
+    function getOptions(): object
     {
         return $this->options;
     }
