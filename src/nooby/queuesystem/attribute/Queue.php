@@ -13,6 +13,8 @@ final class Queue implements AttributeUtility
     /** @var array */
     private $options;
 
+    private int $time = 0;
+
     /**
      * NOTE: $options data base
      *  - (array) players: almacena los jugadores ya sea uno o mas
@@ -28,6 +30,7 @@ final class Queue implements AttributeUtility
             throw new InvalidArgumentException("\"$options\" is not empty");
         }
         $this->options = (object) $options;
+        $this->time = 0;
     }
 
     function getId(): string
@@ -38,6 +41,11 @@ final class Queue implements AttributeUtility
     function getOptions(): object
     {
         return $this->options;
+    }
+
+    function getTime(): int
+    {
+        return $this->time;
     }
 
 }
