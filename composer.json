@@ -1,5 +1,5 @@
 {
-    "name": "nooby/queue-system",
+    "name": "nooby/queue",
     "description": "Queue nooby",
     "type": "library",
     "require-dev": {
@@ -16,6 +16,6 @@
             "name": "iSrDxv"
         }
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "require": {}
 }
