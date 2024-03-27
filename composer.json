@@ -1,0 +1,21 @@
+{
+    "name": "nooby/queue-system",
+    "description": "Queue nooby",
+    "type": "library",
+    "require-dev": {
+        "php": "8.2.13"
+    },
+    "license": "[]",
+    "autoload": {
+        "psr-4": {
+            "nooby\\queuesystem\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "iSrDxv"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

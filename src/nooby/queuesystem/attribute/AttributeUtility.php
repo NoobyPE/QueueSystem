@@ -4,11 +4,9 @@ namespace nooby\queuesystem\attribute;
 
 interface AttributeUtility
 {
-    function __construct(string $id, ...$options);
+    function __construct(string $id, array $options);
 
-    function getID(): string;
+    function getId(): string;
 
-    function getOptionsByIdentifier(string $identifier): mixed;
-
-    function getOptions(): array;
+    function getOptions();
 }
