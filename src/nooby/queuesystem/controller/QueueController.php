@@ -27,8 +27,8 @@ class QueueController implements Controller
     function add(string $id = "", Queue $queue = null, ...$options): string
     {
         if (isset($queue)) {
-            $this->QUEUES[$queue->getID()] = $queue;
-            return $queue->getID();
+            $this->QUEUES[$queue->getId()] = $queue;
+            return $queue->getId();
         }
         $id = $id === "" ? self::generateID() : $id;
         $queue = new Queue($id, $options);

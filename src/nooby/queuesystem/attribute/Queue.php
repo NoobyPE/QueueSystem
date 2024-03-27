@@ -11,8 +11,15 @@ final class Queue implements AttributeUtility
     /** @var string */
     private string $id;
 
+<<<<<<< HEAD
     /** @var Object */
     private object $options;
+=======
+    /** @var array */
+    private $options;
+
+    private int $time = 0;
+>>>>>>> d85d223024cc2675dbe875d082d8a9a35fad6277
 
     /**
      * NOTE: $options data base
@@ -29,6 +36,10 @@ final class Queue implements AttributeUtility
             throw new InvalidArgumentException("\"$options\" is not empty");
         }
         $this->options = (object) $options;
+<<<<<<< HEAD
+=======
+        $this->time = 0;
+>>>>>>> d85d223024cc2675dbe875d082d8a9a35fad6277
     }
 
     function getId(): string
@@ -39,6 +50,11 @@ final class Queue implements AttributeUtility
     function getOptions(): object
     {
         return $this->options;
+    }
+
+    function getTime(): int
+    {
+        return $this->time;
     }
 
 }
