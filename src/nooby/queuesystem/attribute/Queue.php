@@ -4,22 +4,17 @@ declare(strict_types=1);
 namespace nooby\queuesystem\attribute;
 
 use InvalidArgumentException;
-use stdClass;
 
 final class Queue implements AttributeUtility
 {
     /** @var string */
     private string $id;
 
-<<<<<<< HEAD
     /** @var Object */
     private object $options;
-=======
-    /** @var array */
-    private $options;
 
+    /** @var int */
     private int $time = 0;
->>>>>>> d85d223024cc2675dbe875d082d8a9a35fad6277
 
     /**
      * NOTE: $options data base
@@ -36,10 +31,7 @@ final class Queue implements AttributeUtility
             throw new InvalidArgumentException("\"$options\" is not empty");
         }
         $this->options = (object) $options;
-<<<<<<< HEAD
-=======
         $this->time = 0;
->>>>>>> d85d223024cc2675dbe875d082d8a9a35fad6277
     }
 
     function getId(): string
@@ -55,6 +47,18 @@ final class Queue implements AttributeUtility
     function getTime(): int
     {
         return $this->time;
+    }
+
+    function increaseTime(): void
+    {
+        if ($this->time === 0) {
+            $this->time++;
+        }
+    }
+
+    function getDate(): string
+    {
+        return date("H:i:s", time() + $this->time);
     }
 
 }
