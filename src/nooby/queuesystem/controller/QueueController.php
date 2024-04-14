@@ -13,7 +13,7 @@ class QueueController implements Controller
     /**
      * @var array Queue[]
      */
-    private array $QUEUES = []
+    private array $QUEUES = [];
 
     static function generateID(): string
     {
