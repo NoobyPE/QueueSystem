@@ -7,7 +7,7 @@ use nooby\queuesystem\attribute\Queue;
 use nooby\queuesystem\controller\QueueController;
 
 /**
- * NOTE: aqui gestiono funciones donde te devuelve la clase {@link Queue}
+ * NOTE: here i manage functions where the class {@link Queue} returns
  */
 class QueueManagerSystem
 {
@@ -28,7 +28,7 @@ class QueueManagerSystem
     function getQueueByRanked(bool $value = false): ?Queue
     {
         $queues = array_filter(QueueController::getInstance()->getAll(), function(Queue $queue) use($value): bool {
-            return $queue->getOptionsByIdentifier("ranked") === $value;
+            return $queue->getOptions()->ranked === $value;
         });
         if (($queue = $queues[array_rand($queues, 1)]) !== null) {
             return $queue;
@@ -39,7 +39,7 @@ class QueueManagerSystem
     function getQueueByForced(): ?Queue
     {
         $queues = array_filter(QueueController::getInstance()->getAll(), function(Queue $queue): bool {
-            return $queue->getOptionsByIdentifier("force") === true;
+            return $queue->getOptions()->force === true;
         });
         if (($queue = $queues[array_rand($queues, 1)]) !== null) {
             return $queue;
